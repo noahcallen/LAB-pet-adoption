@@ -240,24 +240,8 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
-  const appDiv = document.querySelector("#app");
 
-  // Loop through the pets array
-  for (const pet of pets) {
-    const petCard = document.createElement("div");
-    petCard.classList.add("card");
-    petCard.innerHTML = `
-    <div class="card " style="width: 18rem;">
-      <div class="card-header">${pet.name}</div>
-      <img src="${pet.imageUrl}" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">${pet.color}</h5>
-        <p class="card-text">${pet.specialSkill}</p>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">${pet.type}</li>
-      </ul>
-    </div>`;
+  const appDiv = document.querySelector(""); //put a div with #
+
+  //innerHTML is where you would paste code for card
   
-    appDiv.appendChild(petCard);
-  }

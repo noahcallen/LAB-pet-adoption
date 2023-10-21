@@ -1,0 +1,50 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+#title {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  width: auto; /* Adjust the width as per your design preference */
+  display:inline-table;
+  vertical-align: top;
+  margin: 0px;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
+  gap: 20px; /* Add gap between cards */
+  justify-content: center; /* Center the grid */
+}
+
+#cat{
+  color: white;
+  background-color: rgb(111, 215, 215);
+  border-color:rgb(111, 215, 215);
+  margin: 20px;
+}
+
+#dog{
+  color: white;
+  background-color:rgb(50, 178, 50);
+  border-color:rgb(50, 178, 50);
+  margin: 20px;
+}
+
+#dino{
+  color: white;
+  background-color:rgb(210, 144, 30);
+  border-color:rgb(210, 144, 30);
+  margin: 20px;
+}
+
+#allPets{
+  color: white;
+  background-color:rgb(236, 117, 117);
+  border-color:rgb(236, 117, 117);
+  margin: 20px;
+}
