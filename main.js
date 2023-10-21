@@ -261,3 +261,42 @@ const pets = [
   
     appDiv.appendChild(petCard);
   }
+// Select all buttons
+const buttons = document.querySelectorAll("#button-group button");
+
+// Add click event listeners to each button
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const type = button.id;
+
+    const filteredPets = type === "allPets" ? pets : pets.filter(pet => pet.type === type);
+
+    renderToDOM(filteredPets);
+  });
+});
+
+renderToDOM(pets);
+
+function renderToDOM(petsArray) {
+  const appDiv = document.querySelector("#app");
+  appDiv.innerHTML = "";
+
+  for (const pet of petsArray) {
+    const petCard = document.createElement("div");
+    petCard.classList.add("card");
+    petCard.innerHTML = `
+    <div class="card " style="width: 18rem;">
+      <div class="card-header">${pet.name}</div>
+      <img src="${pet.imageUrl}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">${pet.color}</h5>
+        <p class="card-text">${pet.specialSkill}</p>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">${pet.type}</li>
+      </ul>
+    </div>`;
+
+    appDiv.appendChild(petCard);
+  }
+}

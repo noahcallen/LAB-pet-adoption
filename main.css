@@ -2,7 +2,18 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+#addForm {
+  margin: 100px;
+  border: 10px;
+  padding: 10px;
+}
+
+.form-control {
+  margin: 10px;
+}
+
 #title {
+  margin: 20px;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
