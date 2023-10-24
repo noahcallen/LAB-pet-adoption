@@ -59,3 +59,18 @@ body {
   border-color:rgb(236, 117, 117);
   margin: 20px;
 }
+
+#headerPet {
+  margin-left: 12px;
+  display:inline-block
+}
+
+.form-check {
+  margin: auto;
+  display: inline-block;
+}
+
+.d-grid {
+  margin-left: 100px;
+  margin-right: 100px;
+}
