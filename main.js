@@ -300,3 +300,30 @@ function renderToDOM(petsArray) {
     appDiv.appendChild(petCard);
   }
 }
+
+//creating a new card on our page
+//make a form
+
+//use query selecter to make form work
+//use add event listner 
+const form = document.querySelector('#add-pet-form');
+
+const createPet = (event) => {
+  event.preventDefault();
+
+  const newPetObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#petName").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value,
+    imageUrl: document.querySelector("#imageUrl").value,
+  };
+
+  pets.push(newPetObj); // Add the new pet to the array
+  renderToDOM(pets); // Update the DOM
+  form.reset(); // Reset the form
+};
+form.addEventListener('submit', createPet)
+
+// test
