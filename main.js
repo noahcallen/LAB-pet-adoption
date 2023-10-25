@@ -242,102 +242,80 @@ const pets = [
   ];
   const appDiv = document.querySelector("#app");
 
-  // Loop through the pets array
-  for (const pet of pets) {
-    const petCard = document.createElement("div");
-    petCard.classList.add("card");
-    petCard.innerHTML = `
-    <div class="card " style="width: 18rem;">
-      <div class="card-header">${pet.name}</div>
-      <img src="${pet.imageUrl}" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">${pet.color}</h5>
-        <p class="card-text">${pet.specialSkill}</p>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">${pet.type}</li>
-      </ul>
-    </div>`;
-  
-    appDiv.appendChild(petCard);
-  }
-// Select all buttons
-const buttons = document.querySelectorAll("#button-group button");
+  // Function to render pets to the DOM
+  function renderToDOM(petsArray) {
+    appDiv.innerHTML = "";
 
-// Add click event listeners to each button
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const type = button.id;
+    for (const pet of petsArray) {
+      const petCard = document.createElement("div");
+      petCard.classList.add("card");
+      petCard.innerHTML = `
+        <div class="card" style="width: 23rem;height: 30rem">
+          <div class="card-header">${pet.name}</div>
+          <img src="${pet.imageUrl}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${pet.color}</h5>
+            <p class="card-text">${pet.specialSkill}</p>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">${pet.type}</li>
+          </ul>
+          <div class="e-grid gap-3">
+            <button class="btn btn-primary remove-pet" data-id="${pet.id}">Remove Pet</button>
+          </div>
+        </div>`;
 
-    const filteredPets = type === "allPets" ? pets : pets.filter(pet => pet.type === type);
-
-    renderToDOM(filteredPets);
-  });
-});
-
-renderToDOM(pets);
-
-function renderToDOM(petsArray) {
-  const appDiv = document.querySelector("#app");
-  appDiv.innerHTML = "";
-
-  for (const pet of petsArray) {
-    const petCard = document.createElement("div");
-    petCard.classList.add("card");
-    petCard.innerHTML = `
-    <div class="card " style="width: 18rem;">
-      <div class="card-header">${pet.name}</div>
-      <img src="${pet.imageUrl}" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">${pet.color}</h5>
-        <p class="card-text">${pet.specialSkill}</p>
-      </div>
-      <ul class="list-group">
-        <li class="list-group-item">${pet.type}</li>
-      </ul>
-      <div class="e-grid gap-3">
-      <button class="btn btn-primary remove-pet" data-id="${pet.id}">Remove Pet</button>
-    </div>
-    </div>`;
-
-    appDiv.appendChild(petCard);
-  }
-}
-
-//creating a new card on our page
-//make a form
-
-//use query selecter to make form work
-//use add event listner 
-const form = document.querySelector('#add-pet-form');
-
-const createPet = (event) => {
-  event.preventDefault();
-
-  const newPetObj = {
-    id: pets.length + 1,
-    name: document.querySelector("#petName").value,
-    color: document.querySelector("#color").value,
-    specialSkill: document.querySelector("#specialSkill").value,
-    type: document.querySelector('input[name="petType"]:checked').id,
-    imageUrl: document.querySelector("#imageUrl").value,
-  };
-
-  pets.push(newPetObj); // Add the new pet to the array
-  renderToDOM(pets); // Update the DOM
-  form.reset(); // Reset the form
-};
-form.addEventListener('submit', createPet)
-
-// start delete 
-
-appDiv.addEventListener("click", (event) => {
-  if (event.target.classList.contains("remove-pet")) {
-    const id = event.target.dataset.id;
-    const index = pets.findIndex((pet) => pet.id.toString() === id);
-    if (index !== -1) {
-      pets.splice(index, 1);
-      renderToDOM(pets);
+      appDiv.appendChild(petCard);
     }
   }
-});
+
+  // Select all buttons
+  const buttons = document.querySelectorAll("#button-group button");
+
+  // Add click event listeners to each button
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const type = button.id;
+      const filteredPets = type === "allPets" ? pets : pets.filter((pet) => pet.type === type);
+      renderToDOM(filteredPets);
+    });
+  });
+
+  renderToDOM(pets);
+
+  // Function to create a new pet
+  const form = document.querySelector("#add-pet-form");
+
+  function createPet(event) {
+    event.preventDefault();
+
+    const newPetObj = {
+      id: pets.length + 1,
+      name: document.querySelector("#petName").value,
+      color: document.querySelector("#color").value,
+      specialSkill: document.querySelector("#specialSkill").value,
+      type: document.querySelector('input[name="petType"]:checked').id,
+      imageUrl: document.querySelector("#imageUrl").value,
+    };
+
+    pets.push(newPetObj);
+    renderToDOM(pets);
+    form.reset();
+  }
+
+  form.addEventListener("submit", createPet);
+
+  // Function to remove a pet
+  appDiv.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-pet")) {
+      const id = event.target.dataset.id;
+      const index = pets.findIndex((pet) => pet.id.toString() === id);
+      if (index !== -1) {
+        pets.splice(index, 1);
+        renderToDOM(pets);
+      }
+    }
+  });
+
+  const addButton = document.querySelector("#form-submit");
+  addButton.addEventListener("click", createPet);
