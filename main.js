@@ -296,7 +296,7 @@ function renderToDOM(petsArray) {
         <li class="list-group-item">${pet.type}</li>
       </ul>
       <div class="e-grid gap-3">
-      <button class="btn btn-primary" type="button">Remove Pet</button>
+      <button class="btn btn-primary remove-pet" data-id="${pet.id}">Remove Pet</button>
     </div>
     </div>`;
 
@@ -329,4 +329,15 @@ const createPet = (event) => {
 };
 form.addEventListener('submit', createPet)
 
-// test
+// start delete 
+
+appDiv.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-pet")) {
+    const id = event.target.dataset.id;
+    const index = pets.findIndex((pet) => pet.id.toString() === id);
+    if (index !== -1) {
+      pets.splice(index, 1);
+      renderToDOM(pets);
+    }
+  }
+});
