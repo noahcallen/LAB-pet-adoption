@@ -125,7 +125,7 @@ const pets = [
       color: "Brown",
       specialSkill: "Drives at a safe rate of speed in snow or rain.",
       type: "dino",
-      imageUrl: "https://blog.everythingdinosaur.com/wp-content/uploads/2023/06/PNSO-Cameron-the-Tyrannosaurus-rex-lateral.jpg"
+      imageUrl: "https://images.readwrite.com/wp-content/uploads/2018/03/t-rex-dino-quiz-e1490854556549.jpg"
     },
     {
      id: 17,
@@ -133,7 +133,7 @@ const pets = [
       color: "Yellow",
       specialSkill: "Does not freak out if you haven’t seen his favorite movie (The Big Lebowski).",
       type: "cat",
-      imageUrl: "https://wallpapers.com/images/hd/cat-pictures-zc3gu0636kmldm04.jpg"
+      imageUrl: "http://www.funnycatsite.com/pictures/Close_Up_Yawn.jpg"
     },
     {
       id: 18,
