@@ -1,0 +1,13 @@
+body {
+  background-color: bisque;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+}
