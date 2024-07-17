@@ -253,7 +253,7 @@ const renderToDom = (divId, htmlToRender) => {
 // get the cards on the DOM
 const cardsOnDom = (array) => {
   let domString = "";
-  for (const pet of array) {
+  for (const pet of pets) {
     domString += `<div class="card" style="width: 18rem;">
     <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -290,14 +290,4 @@ showAllButton.addEventListener("click", () => {
 showCatButton.addEventListener("click", () => {
   const catsPet = filter(pets, "cat");
   cardsOnDom(catsPet);
-});
-
-showDogButton.addEventListener("click", () => {
-  const dogsPet = filter(pets, "dog");
-  cardsOnDom(dogsPet);
-});
-
-showDinoButton.addEventListener("click", () => {
-  const dinosPet = filter(pets, "dino");
-  cardsOnDom(dinosPet);
 });

@@ -291,13 +291,3 @@ showCatButton.addEventListener("click", () => {
   const catsPet = filter(pets, "cat");
   cardsOnDom(catsPet);
 });
-
-showDogButton.addEventListener("click", () => {
-  const dogsPet = filter(pets, "dog");
-  cardsOnDom(dogsPet);
-});
-
-showDinoButton.addEventListener("click", () => {
-  const dinosPet = filter(pets, "dino");
-  cardsOnDom(dinosPet);
-});

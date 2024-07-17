@@ -253,7 +253,7 @@ const renderToDom = (divId, htmlToRender) => {
 // get the cards on the DOM
 const cardsOnDom = (array) => {
   let domString = "";
-  for (const pet of array) {
+  for (const pet of pets) {
     domString += `<div class="card" style="width: 18rem;">
     <img src="${pet.imageUrl}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -265,39 +265,4 @@ const cardsOnDom = (array) => {
   renderToDom("#app", domString);
 };
 
-const filter = (array, typeString) => {
-  const petArray = [];
-
-  for (const pet of array) {
-    if (pet.type === typeString) {
-      petArray.push(pet);
-    }
-  }
-
-  return petArray;
-};
-
-const showAllButton = document.querySelector("#show-btn");
-const showCatButton = document.querySelector("#cat");
-const showDogButton = document.querySelector("#dog");
-const showDinoButton = document.querySelector("#dino");
-
-showAllButton.addEventListener("click", () => {
-  cardsOnDom(pets);
-});
-
-
-showCatButton.addEventListener("click", () => {
-  const catsPet = filter(pets, "cat");
-  cardsOnDom(catsPet);
-});
-
-showDogButton.addEventListener("click", () => {
-  const dogsPet = filter(pets, "dog");
-  cardsOnDom(dogsPet);
-});
-
-showDinoButton.addEventListener("click", () => {
-  const dinosPet = filter(pets, "dino");
-  cardsOnDom(dinosPet);
-});
+cardsOnDom(pets);
