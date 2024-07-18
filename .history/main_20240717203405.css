@@ -8,22 +8,17 @@ body {
   padding: 10px;
 }
 
-.card {
-  display: flex;
-  text-align: center;
-}
-
 #app {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* padding: 200px; */
   row-gap: 50px;
   column-gap: 20px;
-
 }
 
 .btn-primary {
-  width: 100px;
+  width: 75px;
 }
 
 .sort-btn {

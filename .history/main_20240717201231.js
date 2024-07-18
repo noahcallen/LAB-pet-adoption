@@ -258,11 +258,10 @@ const cardsOnDom = (array) => {
     `<div class="card" style="width: 18rem;">
     <h5 class="card-header">${pet.name}</h5>
     <img src="${pet.imageUrl}" class="img-thumbnail" alt="...">
-    <h6 class="card-text">${pet.color}</h6>
+    <p class="card-header">${pet.color}</p>
     <div class="card-body">
     <p>${pet.specialSkill}</p>
     </div>
-      <div class="card-footer" pet-color="${pet.type}">${pet.type}</div>
   </div>`;
   }
 
@@ -272,26 +271,6 @@ const cardsOnDom = (array) => {
 //calling cardsOnDom to have all cards loaded when user accesses page
 cardsOnDom(pets);
 
-const applyFooterStyles = () => {
-  const cardFooters = document.querySelectorAll('.card-footer');
-
-  cardFooters.forEach((footer) => {
-    const petType = footer.getAttribute('pet-color');
-    
-    if (petType === 'cat') {
-      footer.style.backgroundColor = 'rgb(0, 174, 255)';
-    } else if (petType === 'dog') {
-      footer.style.backgroundColor = 'rgb(7, 142, 75)';
-    } else if (petType === 'dino') {
-      footer.style.backgroundColor = 'rgb(211, 143, 76)';
-    }
-  });
-};
-
-// Call functions to render cards and apply styles
-cardsOnDom(pets);
-applyFooterStyles();
-
 const filter = (array, typeString) => {
   const petArray = [];
 
@@ -300,6 +279,7 @@ const filter = (array, typeString) => {
       petArray.push(pet);
     }
   }
+
   return petArray;
 };
 
@@ -327,7 +307,3 @@ showDinoButton.addEventListener("click", () => {
   const dinosPet = filter(pets, "dino");
   cardsOnDom(dinosPet);
 });
-
-//start type-color filter
-
-const catsType = filter(pets, "cat");
