@@ -331,3 +331,7 @@ showDinoButton.addEventListener("click", () => {
 //start type-color filter
 
 const catsType = filter(pets, "cat");
+
+$(catsType).css({
+  'background-color' : 'rgb(0, 174, 255);',
+});

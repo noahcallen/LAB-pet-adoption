@@ -262,7 +262,7 @@ const cardsOnDom = (array) => {
     <div class="card-body">
     <p>${pet.specialSkill}</p>
     </div>
-      <div class="card-footer" pet-color="${pet.type}">${pet.type}</div>
+      <div class="card-footer" data-type="${pet.type}">${pet.type}</div>
   </div>`;
   }
 
@@ -276,14 +276,14 @@ const applyFooterStyles = () => {
   const cardFooters = document.querySelectorAll('.card-footer');
 
   cardFooters.forEach((footer) => {
-    const petType = footer.getAttribute('pet-color');
+    const petType = footer.getAttribute('data-type');
     
     if (petType === 'cat') {
-      footer.style.backgroundColor = 'rgb(0, 174, 255)';
+      footer.style.backgroundColor = 'lightblue';
     } else if (petType === 'dog') {
-      footer.style.backgroundColor = 'rgb(7, 142, 75)';
+      footer.style.backgroundColor = 'lightgreen';
     } else if (petType === 'dino') {
-      footer.style.backgroundColor = 'rgb(211, 143, 76)';
+      footer.style.backgroundColor = 'lightcoral';
     }
   });
 };
@@ -331,3 +331,9 @@ showDinoButton.addEventListener("click", () => {
 //start type-color filter
 
 const catsType = filter(pets, "cat");
+
+$(catsType).css({
+  'background-color' : 'rgb(0, 174, 255);',
+});
+
+//end type-color filter

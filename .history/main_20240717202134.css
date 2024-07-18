@@ -1,0 +1,25 @@
+body {
+  background-color: bisque;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* padding: 200px; */
+  row-gap: 50px;
+  column-gap: 20px;
+}
+
+#show-btn {
+  background-color:plum;
+}
+
+#cat {
+  background-color:rgb(0, 174, 255);
+}
+
+#dog {
+  background-color:rgb(7, 142, 75);
+
+}

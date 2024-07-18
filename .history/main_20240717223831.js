@@ -315,16 +315,19 @@ showAllButton.addEventListener("click", () => {
 
 showCatButton.addEventListener("click", () => {
   const catsPet = filter(pets, "cat");
+  backgroundColor('rgb(0, 174, 255)');
   cardsOnDom(catsPet);
 });
 
 showDogButton.addEventListener("click", () => {
   const dogsPet = filter(pets, "dog");
+  backgroundColor('rgb(7, 142, 75)');
   cardsOnDom(dogsPet);
 });
 
 showDinoButton.addEventListener("click", () => {
   const dinosPet = filter(pets, "dino");
+  backgroundColor('rgb(211, 143, 76)');
   cardsOnDom(dinosPet);
 });
 

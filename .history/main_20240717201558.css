@@ -1,0 +1,12 @@
+body {
+  background-color: bisque;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 200px;
+  row-gap: 50px;
+  column-gap: 50px;
+}

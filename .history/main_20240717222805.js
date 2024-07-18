@@ -272,21 +272,28 @@ const cardsOnDom = (array) => {
 //calling cardsOnDom to have all cards loaded when user accesses page
 cardsOnDom(pets);
 
-const applyFooterStyles = () => {
-  const cardFooters = document.querySelectorAll('.card-footer');
 
-  cardFooters.forEach((footer) => {
-    const petType = footer.getAttribute('pet-color');
+function addStyles(element, style) {
+  element.style = style;
+}
+const myElement =document.getAttribute('pet-color');
+addStyles(myElement, "background-color:rgb(0, 174, 255)");
+
+// const applyFooterStyles = () => {
+//   const cardFooters = document.querySelectorAll('.card-footer');
+
+//   cardFooters.forEach((footer) => {
+//     const petType = footer.getAttribute('pet-color');
     
-    if (petType === 'cat') {
-      footer.style.backgroundColor = 'rgb(0, 174, 255)';
-    } else if (petType === 'dog') {
-      footer.style.backgroundColor = 'rgb(7, 142, 75)';
-    } else if (petType === 'dino') {
-      footer.style.backgroundColor = 'rgb(211, 143, 76)';
-    }
-  });
-};
+//     if (petType === 'cat') {
+//       footer.style.backgroundColor = 'rgb(0, 174, 255)';
+//     } else if (petType === 'dog') {
+//       footer.style.backgroundColor = 'rgb(7, 142, 75)';
+//     } else if (petType === 'dino') {
+//       footer.style.backgroundColor = 'rgb(211, 143, 76)';
+//     }
+//   });
+// };
 
 // Call functions to render cards and apply styles
 cardsOnDom(pets);

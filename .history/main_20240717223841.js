@@ -272,21 +272,21 @@ const cardsOnDom = (array) => {
 //calling cardsOnDom to have all cards loaded when user accesses page
 cardsOnDom(pets);
 
-const applyFooterStyles = () => {
-  const cardFooters = document.querySelectorAll('.card-footer');
+// const applyFooterStyles = () => {
+//   const cardFooters = document.querySelectorAll('.card-footer');
 
-  cardFooters.forEach((footer) => {
-    const petType = footer.getAttribute('pet-color');
+//   cardFooters.forEach((footer) => {
+//     const petType = footer.getAttribute('pet-color');
     
-    if (petType === 'cat') {
-      footer.style.backgroundColor = 'rgb(0, 174, 255)';
-    } else if (petType === 'dog') {
-      footer.style.backgroundColor = 'rgb(7, 142, 75)';
-    } else if (petType === 'dino') {
-      footer.style.backgroundColor = 'rgb(211, 143, 76)';
-    }
-  });
-};
+//     if (petType === 'cat') {
+//       footer.style.backgroundColor = 'rgb(0, 174, 255)';
+//     } else if (petType === 'dog') {
+//       footer.style.backgroundColor = 'rgb(7, 142, 75)';
+//     } else if (petType === 'dino') {
+//       footer.style.backgroundColor = 'rgb(211, 143, 76)';
+//     }
+//   });
+// };
 
 // Call functions to render cards and apply styles
 cardsOnDom(pets);
@@ -315,16 +315,19 @@ showAllButton.addEventListener("click", () => {
 
 showCatButton.addEventListener("click", () => {
   const catsPet = filter(pets, "cat");
+  backgroundColor('rgb(0, 174, 255)');
   cardsOnDom(catsPet);
 });
 
 showDogButton.addEventListener("click", () => {
   const dogsPet = filter(pets, "dog");
+  backgroundColor('rgb(7, 142, 75)');
   cardsOnDom(dogsPet);
 });
 
 showDinoButton.addEventListener("click", () => {
   const dinosPet = filter(pets, "dino");
+  backgroundColor('rgb(211, 143, 76)');
   cardsOnDom(dinosPet);
 });
 

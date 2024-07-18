@@ -10,13 +10,14 @@ body {
 
 .card {
   display: flex;
-  text-align: center;
+  align-items: center;
 }
 
 #app {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* padding: 200px; */
   row-gap: 50px;
   column-gap: 20px;
 
