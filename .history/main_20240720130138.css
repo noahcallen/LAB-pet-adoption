@@ -9,10 +9,6 @@ form {
   align-items: center;
 }
 
-.form-floating {
-  width: 500px;
-}
-
 .project-name {
   display: flex;
   justify-content: center;

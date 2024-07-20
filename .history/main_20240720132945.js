@@ -262,8 +262,7 @@ const cardsOnDom = (array) => {
     <div class="card-body">
     <p>${pet.specialSkill}</p>
     </div>
-    <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
-    <div class="card-footer">${pet.type}</div>
+      <div class="card-footer">${pet.type}</div>
   </div>`;
   }
 
@@ -277,41 +276,25 @@ cardsOnDom(pets);
 // Call functions to render cards and apply styles
 cardsOnDom(pets);
 
-//Create new pet
 const form = document.querySelector('form');
 
 const createPet = (e) => {
-  e.preventDefault();
   const newPetObj = {
     id: pets.length + 1,
-    name: document.querySelector("#name").value,
-    color: document.querySelector("#color").value,
-    specialSkill: document.querySelector("#skill").value,
-    type: document.querySelector("#type").value,
-    imageUrl: document.querySelector("#image").value,
+    name: document.querySelector("#name-input").value,
+    color: document.querySelector("#color-input").value,
+    specialSkill: document.querySelector("#skill-input").value,
+    type: document.querySelector("#type-input").value,
+    imageUrl: document.querySelector("#image-input").value,
   }
   pets.push(newPetObj);
-  cardsOnDom(pets);
+  cardsOnDom(pet);
   form.reset(); 
 };
 
-form.addEventListener("submit", createPet);
-//close create new pet
+form.addEventListener("sumbit", createPet);
 
-//delete pet function 
 
-const app = document.querySelector("#app");
-
-app.addEventListener('click', (e) => {
-  if (e.target.id.includes("delete")) {
-    const [, id] = e.target.id.split("--");
-    const index = pets.findIndex(e => e.id === Number(id));
-    pets.splice(index, 1);
-    cardsOnDom(pets);
-  }
-});
-
-//close delete function
 const filter = (array, typeString) => {
   const petArray = [];
 
