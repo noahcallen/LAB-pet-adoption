@@ -2,14 +2,11 @@ body {
   background-color: bisque;
 }
 
-form {
+.form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-}
-
-.form-floating {
+  justify-content: center;
   width: 500px;
 }
 

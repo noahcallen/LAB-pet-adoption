@@ -306,8 +306,6 @@ app.addEventListener('click', (e) => {
   if (e.target.id.includes("delete")) {
     const [, id] = e.target.id.split("--");
     const index = pets.findIndex(e => e.id === Number(id));
-    pets.splice(index, 1);
-    cardsOnDom(pets);
   }
 });
 

@@ -4,12 +4,8 @@ body {
 
 form {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-floating {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
   width: 500px;
 }
 

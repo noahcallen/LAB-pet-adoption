@@ -3,14 +3,7 @@ body {
 }
 
 form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-floating {
-  width: 500px;
+  width: 300px;
 }
 
 .project-name {

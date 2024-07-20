@@ -262,8 +262,7 @@ const cardsOnDom = (array) => {
     <div class="card-body">
     <p>${pet.specialSkill}</p>
     </div>
-    <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
-    <div class="card-footer">${pet.type}</div>
+      <div class="card-footer" pet-color="${pet.type}">${pet.type}</div>
   </div>`;
   }
 
@@ -274,44 +273,11 @@ const cardsOnDom = (array) => {
 cardsOnDom(pets);
 
 
+
 // Call functions to render cards and apply styles
 cardsOnDom(pets);
+applyFooterStyles();
 
-//Create new pet
-const form = document.querySelector('form');
-
-const createPet = (e) => {
-  e.preventDefault();
-  const newPetObj = {
-    id: pets.length + 1,
-    name: document.querySelector("#name").value,
-    color: document.querySelector("#color").value,
-    specialSkill: document.querySelector("#skill").value,
-    type: document.querySelector("#type").value,
-    imageUrl: document.querySelector("#image").value,
-  }
-  pets.push(newPetObj);
-  cardsOnDom(pets);
-  form.reset(); 
-};
-
-form.addEventListener("submit", createPet);
-//close create new pet
-
-//delete pet function 
-
-const app = document.querySelector("#app");
-
-app.addEventListener('click', (e) => {
-  if (e.target.id.includes("delete")) {
-    const [, id] = e.target.id.split("--");
-    const index = pets.findIndex(e => e.id === Number(id));
-    pets.splice(index, 1);
-    cardsOnDom(pets);
-  }
-});
-
-//close delete function
 const filter = (array, typeString) => {
   const petArray = [];
 
@@ -321,9 +287,8 @@ const filter = (array, typeString) => {
     }
   }
   return petArray;
-};//close filter
+};
 
-//buttons for filters
 const showAllButton = document.querySelector("#show-btn");
 const showCatButton = document.querySelector("#cat");
 const showDogButton = document.querySelector("#dog");
@@ -348,4 +313,3 @@ showDinoButton.addEventListener("click", () => {
   const dinosPet = filter(pets, "dino");
   cardsOnDom(dinosPet);
 });
-//close buttons for filter
