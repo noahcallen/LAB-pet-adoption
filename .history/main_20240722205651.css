@@ -2,11 +2,8 @@ body {
   background-color: bisque;
 }
 
-.img-thumbnail{
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-  object-fit: cover;
+.image-thumbnail{
+  size: 200px;
 }
 
 form {

@@ -254,20 +254,20 @@ const renderToDom = (divId, htmlToRender) => {
 const cardsOnDom = (array) => {
   let domString = "";
   for (const pet of array) {
-    const footerClass = 
-    pet.type === 'cat' ? 'cat-footer' :
-    pet.type === 'dog' ? 'dog-footer' :
-    pet.type === 'dino' ? 'dino-footer' : '';
     domString += 
-    `<div class="card" style="width: 18rem;">
+    `<div class="row">
+    <div class="col">
+    <div class="card" style="width: 18rem;">
     <h5 class="card-header">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="img-thumbnail mx-auto d-block" alt="...">
+    <img src="${pet.imageUrl}" class="img-thumbnail" alt="...">
     <h6 class="card-text">${pet.color}</h6>
     <div class="card-body">
     <p>${pet.specialSkill}</p>
     </div>
-    <button class="btn btn-danger mx-auto" id="delete--${pet.id}">Delete</button>
-    <div class="card-footer ${footerClass}">${pet.type}</div>
+    <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
+    <div class="card-footer">${pet.type}</div>
+  </div>
+  </div>
   </div>`;
   }
 
@@ -303,6 +303,7 @@ form.addEventListener("submit", createPet);
 //close create new pet
 
 //delete pet function 
+
 const app = document.querySelector("#app");
 
 app.addEventListener('click', (e) => {
