@@ -261,7 +261,7 @@ const cardsOnDom = (array) => {
     domString += 
     `<div class="card" style="width: 18rem;">
     <h5 class="card-header">${pet.name}</h5>
-    <img src="${pet.imageUrl}" class="img-thumbnail mx-auto d-block" alt="...">
+    <img src="${pet.imageUrl}" class="img-thumbnail" alt="...">
     <h6 class="card-text">${pet.color}</h6>
     <div class="card-body">
     <p>${pet.specialSkill}</p>

@@ -3,9 +3,10 @@ body {
 }
 
 .img-thumbnail{
+  display: flex;
+  justify-content: center;
   height: 200px;
   width: 200px;
-  margin: 10px;
   object-fit: cover;
 }
 
